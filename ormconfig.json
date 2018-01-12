@@ -1,0 +1,10 @@
+{
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "admin",
+    "entities": [
+        "src/entity/*.js"
+    ],
+    "autoSchemaSync": true
+}
