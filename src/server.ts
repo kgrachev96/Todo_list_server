@@ -1,13 +1,12 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
-import { Request, Response } from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import api from "./api";
 
 const PORT = parseInt(process.env.PORT) || 3000;
 
-createConnection().then(async (connection) => {
+createConnection().then((connection) => {
     const app = express();
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());

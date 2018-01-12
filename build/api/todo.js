@@ -1,19 +1,22 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 function todo(req, res) {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log(req.body);
-        res.send("Hello");
-    });
+    const todo = [
+        {
+            title: "Задача 1",
+            completed: true
+        },
+        {
+            title: "Задача 2",
+            completed: true
+        },
+        {
+            title: "Задача 3",
+            completed: true
+        }
+    ];
+    res.send(todo);
 }
 const router = express_1.Router();
 router.post("/", todo);
