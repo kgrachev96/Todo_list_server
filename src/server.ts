@@ -1,26 +1,20 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
-// import api from "./api";
+import { Request, Response } from "express";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
+import api from "./api";
 
 const PORT = parseInt(process.env.PORT) || 3000;
 
 createConnection().then(async (connection) => {
     const app = express();
-    app.use("/build", express.static(__dirname + "/build"));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    app.listen(PORT);
-    app.use((req, res, next) => {
-        res.setHeader("Cache-Control", "no-cache");
-        next();
+    app.use("/api", api);
+    app.listen(PORT, () => {
+        console.log("Live on" + PORT);
     });
-    // const todo = new Todo();
-    // todo.title = "Задача 1";
-    // todo.completed = true;
-    // await connection.manager.save(todo);
-    // await connection.manager.find(Todo);
 }).catch((error) => console.log(error));
 
 // const nextId = 4;

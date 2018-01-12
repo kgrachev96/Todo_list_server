@@ -10,25 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const bodyParser = require("body-parser");
 const express = require("express");
-// import api from "./api";
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
+const api_1 = require("./api");
 const PORT = parseInt(process.env.PORT) || 3000;
 typeorm_1.createConnection().then((connection) => __awaiter(this, void 0, void 0, function* () {
     const app = express();
-    app.use("/build", express.static(__dirname + "/build"));
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    app.listen(PORT);
-    app.use((req, res, next) => {
-        res.setHeader("Cache-Control", "no-cache");
-        next();
+    app.use("/api", api_1.default);
+    app.listen(PORT, () => {
+        console.log("Live on" + PORT);
     });
-    // const todo = new Todo();
-    // todo.title = "Задача 1";
-    // todo.completed = true;
-    // await connection.manager.save(todo);
-    // await connection.manager.find(Todo);
 })).catch((error) => console.log(error));
 // const nextId = 4;
 // app.get("/api/todos", (req, res) => {
