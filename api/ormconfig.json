@@ -1,0 +1,6 @@
+{
+    "type": "mongodb",
+    "host": "100.10.107.232",
+    "port": 27017,
+    "database": "admin"
+}

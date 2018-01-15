@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+
+  mongo:
+    image: mongo:latest
+    ports:
+    - 27017:27017
+    volumes:
+    - ./mongodb/data:/data/db
+    restart: always
+    environment:
+    - MONGO_INITDB_ROOT_USERNAME=todo_db
+    - MONGO_INITDB_ROOT_PASSWORD=96rbhbkk1
+
+  api:
+    build: ./api
+    ports:
+    - 3000:3000
+    restart: always
