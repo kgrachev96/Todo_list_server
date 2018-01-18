@@ -1,5 +1,6 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
+import * as cors from "cors";
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import api from "./api";
@@ -8,14 +9,16 @@ const PORT = parseInt(process.env.PORT) || 3000;
 
 createConnection().then((connection) => {
     const app = express();
+    app.use(cors());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use("/api", api);
     app.listen(PORT, () => {
         console.log("Live on " + PORT);
     });
-}).catch((error) => console.log(error));
+    app.get("/", (req, res) => res.send("Server in LIVE!"));
 
+}).catch((error) => console.log(error));
 // const nextId = 4;
 
 // app.get("/api/todos", (req, res) => {

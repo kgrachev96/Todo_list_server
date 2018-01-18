@@ -16,9 +16,10 @@ function todo(req, res: Res) {
             completed: true
         }
     ];
-    res.send(todo);
+    res.json(todo);
 }
 
 const router = Router();
 router.post("/", todo);
+router.get("/", todo);
 export default router;
