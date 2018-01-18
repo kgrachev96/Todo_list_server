@@ -9,7 +9,7 @@ services:
     - ./mongodb/data:/data/db
     restart: always
     environment:
-    - MONGO_INITDB_ROOT_USERNAME=todo_db
+    - MONGO_INITDB_ROOT_USERNAME=admin
     - MONGO_INITDB_ROOT_PASSWORD=96rbhbkk1
 
   api:

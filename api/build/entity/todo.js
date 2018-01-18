@@ -10,11 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-let Todo = class Todo {
+let Todo = Todo_1 = class Todo extends typeorm_1.BaseEntity {
+    /*===================*/
+    static getTodos() {
+        const todo = new Todo_1();
+        todo.title = "Задача 1";
+        todo.completed = false;
+        todo.save();
+    }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
-    __metadata("design:type", Number)
+    __metadata("design:type", typeorm_1.ObjectID)
 ], Todo.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
@@ -24,17 +31,9 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", Boolean)
 ], Todo.prototype, "completed", void 0);
-Todo = __decorate([
+Todo = Todo_1 = __decorate([
     typeorm_1.Entity()
 ], Todo);
-exports.Todo = Todo;
-// @EntityRepository()
-// export class TodoRepository extends Repository<Todo> {
-//     getTodos(title: string, completed: boolean) {
-//         return this.createQueryBuilder("todo")
-//             .where("todo.title = :title", { title })
-//             .andWhere("user.completed = :completed", { completed })
-//             .getMany();
-//     }
-// } 
+exports.default = Todo;
+var Todo_1;
 //# sourceMappingURL=todo.js.map

@@ -2,9 +2,9 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import * as cors from "cors";
 import "reflect-metadata";
-import { createConnection } from "typeorm";
+import { createConnection, Connection } from "typeorm";
 import api from "./api";
-
+//100.10.107.232
 const PORT = parseInt(process.env.PORT) || 3000;
 
 createConnection().then((connection) => {

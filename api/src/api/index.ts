@@ -1,8 +1,8 @@
 import { Router } from "express";
-import todo from "../api/todo";
+import getTodos from "../api/getTodos";
 
 const router = Router();
 
-router.use("/todo", todo);
+router.use("/todo", getTodos);
 
 export default router;

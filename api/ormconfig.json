@@ -1,6 +1,13 @@
 {
     "type": "mongodb",
-    "host": "100.10.107.232",
+    "host": "mongo",
     "port": 27017,
-    "database": "admin"
+    "database": "todo_db",
+    "entities": [
+        "src/models/*.js",
+        "build/models/*.js",
+        "api/src/models/*.js",
+        "api/build/models/*.js"
+    ],
+    "autoSchemaSync": true
 }

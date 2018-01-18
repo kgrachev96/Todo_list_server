@@ -1,11 +1,10 @@
-import { BaseEntity, Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import { EntityRepository, Repository } from "typeorm";
+import { BaseEntity, ObjectID, Entity, PrimaryGeneratedColumn, Column, getConnection } from "typeorm";
 
 @Entity()
-export class Todo {
+export default class Todo extends BaseEntity {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    id: ObjectID;
 
     @Column()
     title: string;
@@ -13,16 +12,6 @@ export class Todo {
     @Column()
     completed: boolean;
 
-}
-
-@EntityRepository()
-export class TodoRepository extends Repository<Todo> {
-
-    getTodos(title: string, completed: boolean) {
-        return this.createQueryBuilder("todo")
-            .where("todo.title = :title", { title })
-            .andWhere("user.completed = :completed", { completed })
-            .getMany();
-    }
+    /*===================*/
 
 }
