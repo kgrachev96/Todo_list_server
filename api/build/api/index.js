@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const getTodos_1 = require("../api/getTodos");
+const initial_1 = require("../api/initial");
 const router = express_1.Router();
-router.use("/todo", getTodos_1.default);
+router.use("/initial", initial_1.default);
 exports.default = router;
 //# sourceMappingURL=index.js.map

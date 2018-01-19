@@ -1,0 +1,1 @@
+{"version":3,"file":"CommercialSettings.js","sourceRoot":"","sources":["../../src/entity/CommercialSettings.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,qCAA+E;AAK/E,IAAqB,kBAAkB,GAAvC,wBAAwC,SAAQ,oBAAU;CAWzD,CAAA;AARG;IADC,wBAAc,EAAE;8BACb,kBAAQ;8CAAC;AAGb;IADC,gBAAM,EAAE;;iDACK;AAGd;IADC,gBAAM,EAAE;;qDACU;AATF,kBAAkB;IADtC,gBAAM,EAAE;GACY,kBAAkB,CAWtC;kBAXoB,kBAAkB"}

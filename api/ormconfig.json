@@ -2,12 +2,14 @@
     "type": "mongodb",
     "host": "mongo",
     "port": 27017,
-    "database": "todo_db",
+    "username": "kgrachev",
+    "password": "po04uy76",
+    "database": "admin",
     "entities": [
-        "src/models/*.js",
-        "build/models/*.js",
-        "api/src/models/*.js",
-        "api/build/models/*.js"
+        "src/entity/*.js",
+        "build/entity/*.js",
+        "api/src/entity/*.js",
+        "api/build/entity/*.js"
     ],
     "autoSchemaSync": true
 }

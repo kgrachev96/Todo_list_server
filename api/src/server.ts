@@ -1,16 +1,16 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
-import * as cors from "cors";
 import "reflect-metadata";
-import { createConnection, Connection } from "typeorm";
+import { createConnection } from "typeorm";
 import api from "./api";
+import { initSettings } from "./inits/initialSettings";
 //100.10.107.232
 const PORT = parseInt(process.env.PORT) || 3000;
 
-createConnection().then((connection) => {
+createConnection().then(async (connection) => {
+    await initSettings();
     const app = express();
-    app.use(cors());
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
     app.use("/api", api);
     app.listen(PORT, () => {
