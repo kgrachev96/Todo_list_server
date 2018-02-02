@@ -12,8 +12,8 @@ const express_1 = require("express");
 const InitialSettings_1 = require("../entity/InitialSettings");
 function initial(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
-        const initialSettings = yield InitialSettings_1.default.findOne();
-        res.json(Object.assign({}, initialSettings));
+        const initialSettings = yield InitialSettings_1.default.find();
+        res.json(initialSettings);
     });
 }
 const router = express_1.Router();

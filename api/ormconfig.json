@@ -6,9 +6,7 @@
     "password": "po04uy76",
     "database": "admin",
     "entities": [
-        "src/entity/*.js",
         "build/entity/*.js",
-        "api/src/entity/*.js",
         "api/build/entity/*.js"
     ],
     "autoSchemaSync": true

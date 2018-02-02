@@ -21,8 +21,8 @@ exports.initSettings = initSettings;
 function settings() {
     return __awaiter(this, void 0, void 0, function* () {
         const settings = new InitialSettings_1.default();
-        settings.title = "Ваша первая задача на сегодня...";
-        settings.completed = true;
+        settings.title = "Добавляйте, изменяйте и удаляйте задачи...";
+        settings.completed = false;
         yield settings.save();
     });
 }

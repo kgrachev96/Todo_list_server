@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const bodyParser = require("body-parser");
 const express = require("express");
+const cors = require("cors");
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
 const api_1 = require("./api");
@@ -21,6 +22,7 @@ typeorm_1.createConnection().then((connection) => __awaiter(this, void 0, void 0
     const app = express();
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+    app.use(cors());
     app.use("/api", api_1.default);
     app.listen(PORT, () => {
         console.log("Live on " + PORT);
@@ -57,5 +59,5 @@ typeorm_1.createConnection().then((connection) => __awaiter(this, void 0, void 0
 //     if (index === -1) { return res.sendStatus(404); }
 //     todos.splice(index, 1);
 //     res.sendStatus(204);
-// });
+// }); 
 //# sourceMappingURL=server.js.map

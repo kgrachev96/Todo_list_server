@@ -9,8 +9,9 @@ services:
     - ./mongodb/data:/data/db
     restart: always
     environment:
-    - MONGO_INITDB_ROOT_USERNAME=kgrachev
-    - MONGO_INITDB_ROOT_PASSWORD=po04uy76
+    - MONGODB_USERNAME=kgrachev
+    - MONGODB_PASSWORD=po04uy76
+    - MONGODB_DATABASE=admin
 
   api:
     build: ./api

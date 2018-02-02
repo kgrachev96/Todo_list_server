@@ -3,8 +3,8 @@ import { Request as Req, Response as Res } from "express";
 import InitialSettings from "../entity/InitialSettings";
 
 async function initial(req, res: Res) {
-    const initialSettings = await InitialSettings.findOne();
-    res.json({ ...initialSettings });
+    const initialSettings = await InitialSettings.find();
+    res.json(initialSettings);
 }
 
 const router = Router();
