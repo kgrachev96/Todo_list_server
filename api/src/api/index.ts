@@ -1,7 +1,13 @@
 import { Router } from "express";
 import initial from "../api/initial";
-import addTodo from "../api/addTodo";
+import todoAdd from "../api/todoAdd";
+import todoStatus from "../api/todoStatus";
+import todoDelete from "../api/todoDelete";
+import todoSave from "./todoSave";
 const router = Router();
 router.use("/initial", initial);
-router.use("/addTodo", addTodo);
+router.use("/todoAdd", todoAdd);
+router.use("/todoStatus", todoStatus);
+router.use("/todoDelete", todoDelete);
+router.use("/todoSave", todoSave);
 export default router;

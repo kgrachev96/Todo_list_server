@@ -2,7 +2,7 @@
   "name": "todo_list_server",
   "version": "1.0.0",
   "description": "Server for todo_list application",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
     "build": "tsc",
     "start": "node ./build/server.js"
