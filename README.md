@@ -1,2 +1,2 @@
-# Todo_list_server
-Server for todo_list application
+# Task_list_server
+Server for task_list application
