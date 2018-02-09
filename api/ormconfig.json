@@ -1,6 +1,6 @@
 {
     "type": "mongodb",
-    "host": "mongo",
+    "host": "mytasklist.info",
     "port": 27017,
     "username": "kgrachev",
     "password": "po04uy76",
