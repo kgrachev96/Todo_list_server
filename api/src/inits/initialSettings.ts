@@ -9,7 +9,7 @@ export async function initSettings() {
 
 async function settings() {
     const settings = new InitialSettings();
-    settings.title = "Добавляйте, изменяйте и удаляйте задачи...";
+    settings.title = "Добавьте Вашу первую задачу...";
     settings.completed = false;
     await settings.save();
 }
