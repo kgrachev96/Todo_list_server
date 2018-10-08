@@ -9,8 +9,8 @@ services:
     - ./mongodb/data:/data/db
     restart: always
     environment:
-    - MONGODB_USERNAME=kgrachev
-    - MONGODB_PASSWORD=po04uy76
+    - MONGODB_USERNAME=test
+    - MONGODB_PASSWORD=1234
     - MONGODB_DATABASE=admin
 
   api:
